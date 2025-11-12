@@ -234,17 +234,20 @@ svg {
         margin-right: 10px;
     }
 
+    .navbar-center {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
     .navbar-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
+        width: 100%;
         background: white;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
-        z-index: 1000;
+        order: 3;
     }
 
     .navbar-menu.show {
@@ -263,6 +266,14 @@ svg {
 
     .nav-link {
         font-size: 16px;
+    }
+
+    .navbar-content {
+        flex-wrap: wrap;
+    }
+
+    .navbar-toggler {
+        order: 2;
     }
 }
 
@@ -1617,60 +1628,77 @@ svg {
 
 @media (max-width: 768px) {
     .central-image-container {
-        min-height: 400px;
+        min-height: auto;
         margin: 30px 0;
+        flex-direction: column;
     }
 
     .yoga-woman {
         max-width: 250px;
     }
 
+    .hint-blocks {
+        position: static;
+        width: 100%;
+        height: auto;
+        pointer-events: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
     .hint-block {
-        position: relative !important;
-        margin: 20px 0;
+        position: static !important;
+        margin: 0;
         display: block;
+        background: white;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .action-hint {
-        top: auto !important;
-        left: auto !important;
-        transform: none !important;
-        text-align: center;
-    }
-
-    .psyche-hint {
-        top: auto !important;
-        right: auto !important;
-        transform: none !important;
-        text-align: center;
-    }
-
+    .action-hint,
+    .psyche-hint,
     .motivation-hint {
         top: auto !important;
         left: auto !important;
+        right: auto !important;
         transform: none !important;
-        text-align: center;
+        text-align: left;
+    }
+
+    .hint-trigger {
+        justify-content: flex-start;
+        margin-bottom: 10px;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .hint-trigger:hover {
+        transform: none;
+        box-shadow: none;
+        background: transparent;
     }
 
     .hint-content {
-        position: relative !important;
+        position: static !important;
         top: auto !important;
         left: auto !important;
         right: auto !important;
         transform: none !important;
-        margin: 10px 0;
+        margin: 0;
+        padding: 0;
         max-width: 100%;
         opacity: 1 !important;
         visibility: visible !important;
+        box-shadow: none;
+        background: transparent;
     }
 
     .hint-arrow {
         display: none;
-    }
-
-    .hint-trigger {
-        justify-content: center;
-        margin-bottom: 10px;
     }
 }
 
