@@ -234,9 +234,15 @@ svg {
 
 /* Mobile Navigation */
 @media (max-width: 1200px) {
+    .navbar-content {
+        position: relative;
+    }
+
     .navbar-toggler {
         display: block;
         margin-left: auto;
+        position: relative;
+        z-index: 1001;
     }
 
     .navbar-center {
@@ -277,10 +283,6 @@ svg {
 
     .nav-link {
         font-size: 16px;
-    }
-
-    .navbar-content {
-        position: relative;
     }
 
     .navbar-actions {
