@@ -84,6 +84,7 @@ svg {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    position: relative;
 }
 
 .navbar-toggler {
@@ -93,6 +94,8 @@ svg {
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 4px;
+    position: relative;
+    z-index: 1001;
 }
 
 .navbar-toggler-icon {
@@ -123,6 +126,8 @@ svg {
 
 .navbar-menu {
     display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .navbar-nav {
@@ -231,27 +236,33 @@ svg {
 @media (max-width: 1200px) {
     .navbar-toggler {
         display: block;
-        margin-right: 10px;
+        margin-left: auto;
     }
 
     .navbar-center {
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        width: 280px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background: white;
+        box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+    }
+
+    .navbar-center.show {
+        max-height: 600px;
     }
 
     .navbar-menu {
         width: 100%;
-        background: white;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        order: 3;
-    }
-
-    .navbar-menu.show {
-        max-height: 400px;
+        background: transparent;
+        box-shadow: none;
+        max-height: none;
+        overflow: visible;
+        display: block;
     }
 
     .navbar-nav {
@@ -269,11 +280,26 @@ svg {
     }
 
     .navbar-content {
-        flex-wrap: wrap;
+        position: relative;
     }
 
-    .navbar-toggler {
-        order: 2;
+    .navbar-actions {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        border-top: 1px solid #f0f0f0;
+    }
+
+    .btn-call-me {
+        width: 100%;
+        text-align: center;
+        padding: 12px 18px;
+    }
+
+    .instagram-link {
+        justify-content: center;
     }
 }
 
