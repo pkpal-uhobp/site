@@ -17,6 +17,18 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 img,
 svg {
     vertical-align: middle;
@@ -1048,11 +1060,13 @@ button:focus-visible {
     background-size: cover;
     position: relative;
     overflow: hidden;
+    container-type: inline-size;
+    container-name: tools-section;
 }
 
 .tools-title {
     font-family: 'Cormorant', serif;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 3vw, 2.5rem);
     font-weight: 700;
     color: #2c3e50;
     margin-bottom: 3rem;
@@ -1064,8 +1078,16 @@ button:focus-visible {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    gap: clamp(30px, 5vw, 60px);
     margin-top: 40px;
+}
+
+/* Container query for tools grid */
+@container tools-section (max-width: 800px) {
+    .tools-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
 }
 
 .tool-item {
@@ -1189,11 +1211,13 @@ button:focus-visible {
     padding: 80px 0;
     background: white;
     position: relative;
+    container-type: inline-size;
+    container-name: results-section;
 }
 
 .results-title {
     font-family: 'Cormorant', serif;
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
     font-weight: 700;
     color: #2c3e50;
     margin-bottom: 3rem;
@@ -1202,12 +1226,20 @@ button:focus-visible {
 
 .results-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
     gap: 60px;
     margin-top: 40px;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Container query for results */
+@container results-section (max-width: 700px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
 }
 
 .results-column {
@@ -1229,7 +1261,7 @@ button:focus-visible {
 
 .result-text {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
     font-weight: 400;
     color: #2c3e50;
     line-height: 1.5;
@@ -1241,23 +1273,8 @@ button:focus-visible {
         padding: 60px 0;
     }
 
-    .results-title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
-    .results-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        margin-top: 30px;
-    }
-
     .results-column {
         gap: 20px;
-    }
-
-    .result-text {
-        font-size: 1rem;
     }
 }
 
@@ -1266,24 +1283,12 @@ button:focus-visible {
         padding: 40px 0;
     }
 
-    .results-title {
-        font-size: 1.8rem;
-    }
-
-    .results-grid {
-        gap: 30px;
-    }
-
     .results-column {
         gap: 15px;
     }
 
     .result-item {
         gap: 12px;
-    }
-
-    .result-text {
-        font-size: 0.95rem;
     }
 }
 
@@ -1759,7 +1764,7 @@ button:focus-visible {
 .registration-title {
     font-family: 'Cormorant', serif;
     font-weight: 600;
-    font-size: 48px;
+    font-size: clamp(28px, 4vw, 48px);
     line-height: 1.2;
     color: #2c3e50;
     margin-bottom: 20px;
@@ -1768,7 +1773,7 @@ button:focus-visible {
 .registration-subtitle {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: clamp(14px, 2vw, 18px);
     line-height: 1.5;
     color: #2c3e50;
     margin-bottom: 40px;
@@ -1864,14 +1869,6 @@ button:focus-visible {
         gap: 40px;
     }
 
-    .registration-title {
-        font-size: 36px;
-    }
-
-    .registration-subtitle {
-        font-size: 16px;
-    }
-
     .registration-button-img {
         width: 100%;
         max-width: 300px;
@@ -1879,14 +1876,6 @@ button:focus-visible {
 }
 
 @media (max-width: 576px) {
-    .registration-title {
-        font-size: 28px;
-    }
-
-    .registration-subtitle {
-        font-size: 14px;
-    }
-
     .registration-box {
         padding: 30px 20px;
     }
