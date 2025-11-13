@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="HeartMinded - авторский курс пилатеса от Ксении Писаревой. Обретите стройное тело и восстановите внутреннее равновесие." />
         <title>HeartMinded - Авторский курс Ксении Писаревой</title>
         <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Cormorant:wght@400;600;700&display=swap"
@@ -12,12 +13,15 @@
     </head>
     <body>
         <div class="first-main">
-            <nav class="navbar" id="navbar-id">
+            <nav class="navbar" id="navbar-id" role="navigation" aria-label="Главная навигация">
               <div class="navbar-container">
                 <div class="navbar-content">
                   <div class="navbar-logo">
-                    <a class="navbar-brand" href="#">
-                      <img src="assets/Logo.svg" alt="HeartMinded" height="60" />
+                    <a class="navbar-brand" href="#" aria-label="HeartMinded - на главную">
+                      <picture>
+                        <source srcset="assets/Logo2x.png 2x, assets/Logo1x.png 1x" type="image/png" />
+                        <img src="assets/Logo1x.png" alt="HeartMinded логотип" width="auto" height="80" />
+                      </picture>
                     </a>
                   </div>
       
@@ -33,52 +37,53 @@
                   </button>
                   <div class="navbar-center desktop-only">
                     <div class="navbar-menu" id="navbarNav">
-                      <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="#for-whom">Для кого этот курс?</a><div class="nav-line"></div></li>
-                        <li class="nav-item"><a class="nav-link" href="#results">Результаты обучения</a><div class="nav-line"></div></li>
-                        <li class="nav-item"><a class="nav-link" href="#prices">Тарифы</a><div class="nav-line"></div></li>
-                        <li class="nav-item"><a class="nav-link" href="#tools">Инструменты</a><div class="nav-line"></div></li>
-                        <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a><div class="nav-line"></div></li>
+                      <ul class="navbar-nav" role="menubar">
+                        <li class="nav-item" role="none"><a class="nav-link" href="#for-whom" role="menuitem">Для кого этот курс?</a><div class="nav-line" aria-hidden="true"></div></li>
+                        <li class="nav-item" role="none"><a class="nav-link" href="#results" role="menuitem">Результаты обучения</a><div class="nav-line" aria-hidden="true"></div></li>
+                        <li class="nav-item" role="none"><a class="nav-link" href="#prices" role="menuitem">Тарифы</a><div class="nav-line" aria-hidden="true"></div></li>
+                        <li class="nav-item" role="none"><a class="nav-link" href="#tools" role="menuitem">Инструменты</a><div class="nav-line" aria-hidden="true"></div></li>
+                        <li class="nav-item" role="none"><a class="nav-link" href="#contacts" role="menuitem">Контакты</a><div class="nav-line" aria-hidden="true"></div></li>
                       </ul>
                       <div class="navbar-actions">
-                        <a href="https://instagram.com" class="instagram-link" aria-label="Instagram">
-                          <img src="assets/Inst.svg" alt="inst" />
+                        <a href="https://instagram.com" class="instagram-link" aria-label="Наш Instagram" rel="noopener noreferrer" target="_blank">
+                          <img src="assets/Inst.svg" alt="" width="32" height="32" />
                         </a>
-                        <a class="btn-call-me">Перезвоните мне</a>
+                        <button class="btn-call-me" type="button" aria-label="Заказать обратный звонок">Перезвоните мне</button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="navbar-overlay" id="navbarOverlay" hidden>
-                <div class="mobile-menu-panel" id="mobileMenuPanel" role="dialog" aria-modal="true" aria-label="Меню навигации">
+                <div class="mobile-menu-panel" id="mobileMenuPanel" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+                  <h2 id="mobile-menu-title" class="visually-hidden">Меню навигации</h2>
                   <button class="menu-close" id="menuCloseBtn" aria-label="Закрыть меню">×</button>
-                  <ul class="mobile-nav-list">
-                    <li><a class="mobile-nav-link" href="#for-whom">Для кого этот курс?</a></li>
-                    <li><a class="mobile-nav-link" href="#results">Результаты обучения</a></li>
-                    <li><a class="mobile-nav-link" href="#prices">Тарифы</a></li>
-                    <li><a class="mobile-nav-link" href="#tools">Инструменты</a></li>
-                    <li><a class="mobile-nav-link" href="#contacts">Контакты</a></li>
+                  <ul class="mobile-nav-list" role="menu">
+                    <li role="none"><a class="mobile-nav-link" href="#for-whom" role="menuitem">Для кого этот курс?</a></li>
+                    <li role="none"><a class="mobile-nav-link" href="#results" role="menuitem">Результаты обучения</a></li>
+                    <li role="none"><a class="mobile-nav-link" href="#prices" role="menuitem">Тарифы</a></li>
+                    <li role="none"><a class="mobile-nav-link" href="#tools" role="menuitem">Инструменты</a></li>
+                    <li role="none"><a class="mobile-nav-link" href="#contacts" role="menuitem">Контакты</a></li>
                   </ul>
       
                   <div class="mobile-menu-footer">
-                    <a href="https://instagram.com" class="social-circle" aria-label="Instagram">
-                      <img src="assets/Inst.svg" alt="Instagram" />
+                    <a href="https://instagram.com" class="social-circle" aria-label="Наш Instagram" rel="noopener noreferrer" target="_blank">
+                      <img src="assets/Inst.svg" alt="" width="26" height="26" />
                     </a>
-                    <a class="btn-call-me mobile-call-btn">Перезвоните мне</a>
+                    <button class="btn-call-me mobile-call-btn" type="button" aria-label="Заказать обратный звонок">Перезвоните мне</button>
                   </div>
                 </div>
               </div>
             </nav>
       
 
-            <section class="hero-section">
+            <section class="hero-section" id="main-content">
                 <div class="container">
                     <div class="hero-content">
                         <div class="hero-header">
-                            <h6 class="author-name">
+                            <p class="author-name">
                                 Авторский курс Ксении Писаревой
-                            </h6>
+                            </p>
                         </div>
                         <div class="hero-title">
                             <h1 class="course-title">
@@ -96,11 +101,13 @@
                             <div class="features-container">
                                 <div class="features-grid">
                                     <div class="feature-item">
-                                        <div class="feature-icon">
+                                        <div class="feature-icon" aria-hidden="true">
                                             <img
                                                 src="assets/free-icon-yoga-position-1599530 1.svg"
-                                                alt="Преподаватель"
+                                                alt=""
                                                 class="feature-svg"
+                                                width="40"
+                                                height="40"
                                             />
                                         </div>
                                         <div class="feature-text">
@@ -113,11 +120,13 @@
                                         </div>
                                     </div>
                                     <div class="feature-item">
-                                        <div class="feature-icon">
+                                        <div class="feature-icon" aria-hidden="true">
                                             <img
                                                 src="assets/free-icon-helping-hand-3208247 1.svg"
-                                                alt="Поддержка"
+                                                alt=""
                                                 class="feature-svg"
+                                                width="40"
+                                                height="40"
                                             />
                                         </div>
                                         <div class="feature-text">
@@ -133,11 +142,13 @@
                                         </div>
                                     </div>
                                     <div class="feature-item">
-                                        <div class="feature-icon">
+                                        <div class="feature-icon" aria-hidden="true">
                                             <img
                                                 src="assets/free-icon-time-1792839 1.svg"
-                                                alt="Длительность"
+                                                alt=""
                                                 class="feature-svg"
+                                                width="40"
+                                                height="40"
                                             />
                                         </div>
                                         <div class="feature-text">
@@ -153,11 +164,13 @@
                             </div>
 
                             <div class="register-button-container">
-                                <a href="#register">
+                                <a href="#register" aria-label="Зарегистрироваться на бесплатный вебинар">
                                     <img
                                         src="assets/btn.svg"
-                                        alt="Зарегистрироваться на бесплатный вебинар"
+                                        alt="Зарегистрироваться"
                                         class="register-button-img"
+                                        width="auto"
+                                        height="auto"
                                     />
                                 </a>
                             </div>
@@ -189,6 +202,9 @@
                                             class="question-icon"
                                             src="assets/quest.svg"
                                             alt=""
+                                            aria-hidden="true"
+                                            width="20"
+                                            height="20"
                                         />
                                     </div>
                                     <div class="hint-content">
@@ -196,7 +212,7 @@
                                         определяется действиями. Действия
                                         же, в свою очередь, мотивацией.
                                     </div>
-                                    <div class="hint-arrow"></div>
+                                    <div class="hint-arrow" aria-hidden="true"></div>
                                 </div>
 
                                 <div class="hint-block psyche-hint">
@@ -208,6 +224,9 @@
                                             class="question-icon"
                                             src="assets/quest.svg"
                                             alt=""
+                                            aria-hidden="true"
+                                            width="20"
+                                            height="20"
                                         />
                                     </div>
                                     <div class="hint-content">
@@ -216,7 +235,7 @@
                                         физикой, и с психикой, и с химией
                                         нашего организма.
                                     </div>
-                                    <div class="hint-arrow"></div>
+                                    <div class="hint-arrow" aria-hidden="true"></div>
                                 </div>
 
                                 <div class="hint-block motivation-hint">
@@ -228,6 +247,9 @@
                                             class="question-icon"
                                             src="assets/quest.svg"
                                             alt=""
+                                            aria-hidden="true"
+                                            width="20"
+                                            height="20"
                                         />
                                     </div>
                                     <div class="hint-content">
@@ -235,7 +257,7 @@
                                         процессы психики, часть которых мы
                                         даже не осознаем.
                                     </div>
-                                    <div class="hint-arrow"></div>
+                                    <div class="hint-arrow" aria-hidden="true"></div>
                                 </div>
                             </div>
                         </div>
@@ -270,11 +292,13 @@
 
                     <div class="elements-grid">
                         <div class="element-item">
-                            <div class="element-icon">
+                            <div class="element-icon" aria-hidden="true">
                                 <img
                                     src="assets/1.svg"
-                                    alt="Преподаватель"
+                                    alt=""
                                     class="element-svg"
+                                    width="50"
+                                    height="50"
                                 />
                             </div>
                             <div class="element-content">
@@ -291,11 +315,13 @@
                         </div>
 
                         <div class="element-item">
-                            <div class="element-icon">
+                            <div class="element-icon" aria-hidden="true">
                                 <img
                                     src="assets/2.svg"
-                                    alt="Поддержка"
+                                    alt=""
                                     class="element-svg"
+                                    width="50"
+                                    height="50"
                                 />
                             </div>
                             <div class="element-content">
@@ -312,11 +338,13 @@
                         </div>
 
                         <div class="element-item">
-                            <div class="element-icon">
+                            <div class="element-icon" aria-hidden="true">
                                 <img
                                     src="assets/3.svg"
-                                    alt="Индивидуальный подход"
+                                    alt=""
                                     class="element-svg"
+                                    width="50"
+                                    height="50"
                                 />
                             </div>
                             <div class="element-content">
@@ -333,11 +361,13 @@
                         </div>
 
                         <div class="element-item">
-                            <div class="element-icon">
+                            <div class="element-icon" aria-hidden="true">
                                 <img
                                     src="assets/4.svg"
-                                    alt="Доступная методика"
+                                    alt=""
                                     class="element-svg"
+                                    width="50"
+                                    height="50"
                                 />
                             </div>
                             <div class="element-content">
@@ -353,11 +383,13 @@
                         </div>
 
                         <div class="element-item">
-                            <div class="element-icon">
+                            <div class="element-icon" aria-hidden="true">
                                 <img
                                     src="assets/5.svg"
-                                    alt="Экономия ресурсов"
+                                    alt=""
                                     class="element-svg"
+                                    width="50"
+                                    height="50"
                                 />
                             </div>
                             <div class="element-content">
@@ -385,7 +417,7 @@
 
                         <div class="sec1">
                             <div class="sec-image">
-                                <img src="assets/sec1.svg" alt="Восстановления после родов">
+                                <img src="assets/sec1.svg" alt="Восстановления после родов" width="auto" height="auto" loading="lazy">
                             </div>
                             <div class="sec-content">
                                 <h3 class="sec-title">Восстановления после родов</h3>
@@ -399,7 +431,7 @@
 
                         <div class="sec2">
                             <div class="sec-image">
-                                <img src="assets/sec2.svg" alt="Людей с сидячей работой">
+                                <img src="assets/sec2.svg" alt="Людей с сидячей работой" width="auto" height="auto" loading="lazy">
                             </div>
                             <div class="sec-content">
                                 <h3 class="sec-title">Людей с сидячей работой</h3>
@@ -412,7 +444,7 @@
                         </div>
                         <div class="sec3">
                             <div class="sec-image">
-                                <img src="assets/sec3.svg" alt="Восстановления после травм/операций">
+                                <img src="assets/sec3.svg" alt="Восстановления после травм/операций" width="auto" height="auto" loading="lazy">
                             </div>
                             <div class="sec-content">
                                 <h3 class="sec-title">Восстановления после травм/операций</h3>
@@ -436,23 +468,56 @@
                             <h2 class="registration-title">Не уверены, что вам нужен курс?</h2>
                             <p class="registration-subtitle">Начните с бесплатного живого вебинара с автором курса</p>
                             
-                            <form class="registration-form">
-                                <input type="text" class="registration-input" placeholder="Введите Имя" required>
-                                <input type="email" class="registration-input" placeholder="Введите e-mail" required>
+                            <form class="registration-form" id="registration-form" novalidate>
+                                <div class="form-group">
+                                    <label for="reg-name" class="visually-hidden">Ваше имя</label>
+                                    <input 
+                                        type="text" 
+                                        id="reg-name" 
+                                        name="name" 
+                                        class="registration-input" 
+                                        placeholder="Введите Имя" 
+                                        required 
+                                        aria-required="true"
+                                        autocomplete="name"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="reg-email" class="visually-hidden">Ваш email</label>
+                                    <input 
+                                        type="email" 
+                                        id="reg-email" 
+                                        name="email" 
+                                        class="registration-input" 
+                                        placeholder="Введите e-mail" 
+                                        required 
+                                        aria-required="true"
+                                        autocomplete="email"
+                                    />
+                                </div>
                                 
                                 <div class="registration-checkbox">
-                                    <input type="checkbox" id="privacy-reg" checked>
+                                    <input 
+                                        type="checkbox" 
+                                        id="privacy-reg" 
+                                        name="privacy" 
+                                        checked 
+                                        required
+                                        aria-required="true"
+                                    />
                                     <label for="privacy-reg">Я согласен на обработку персональных данных и с условиями политики конфиденциальности</label>
                                 </div>
                             </form>
                             
                             <div class="registration-button-container">
-                                <img src="assets/reg_bnt.svg" alt="Зарегистрироваться на бесплатный вебинар" class="registration-button-img">
+                                <button type="submit" form="registration-form" class="registration-button-wrapper" aria-label="Отправить форму регистрации">
+                                    <img src="assets/reg_bnt.svg" alt="Зарегистрироваться на бесплатный вебинар" class="registration-button-img" width="auto" height="auto" />
+                                </button>
                             </div>
                         </div>
                         
-                        <div class="registration-image" id="register">
-                            <img src="assets/reg.svg" alt="Регистрация на вебинар">
+                        <div class="registration-image" id="register" aria-hidden="true">
+                            <img src="assets/reg.svg" alt="" width="auto" height="auto" />
                         </div>
                     </div>
                 </div>
@@ -470,8 +535,8 @@
 
                     <div class="tools-grid">
                         <div class="tool-item">
-                            <div class="tool-icon">
-                                <img src="assets/1-sec.svg" alt="Авторские лекции" class="tool-svg">
+                            <div class="tool-icon" aria-hidden="true">
+                                <img src="assets/1-sec.svg" alt="" class="tool-svg" width="40" height="40" loading="lazy">
                             </div>
                             <div class="tool-content">
                                 <h4 class="tool-title">
@@ -484,8 +549,8 @@
                         </div>
 
                         <div class="tool-item">
-                            <div class="tool-icon">
-                                <img src="assets/2-sec.svg" alt="Видео-уроки" class="tool-svg">
+                            <div class="tool-icon" aria-hidden="true">
+                                <img src="assets/2-sec.svg" alt="" class="tool-svg" width="40" height="40" loading="lazy">
                             </div>
                             <div class="tool-content">
                                 <h4 class="tool-title">
@@ -498,8 +563,8 @@
                         </div>
 
                         <div class="tool-item">
-                            <div class="tool-icon">
-                                <img src="assets/3-sec.svg" alt="Медитации" class="tool-svg">
+                            <div class="tool-icon" aria-hidden="true">
+                                <img src="assets/3-sec.svg" alt="" class="tool-svg" width="40" height="40" loading="lazy">
                             </div>
                             <div class="tool-content">
                                 <h4 class="tool-title">
@@ -640,7 +705,49 @@
                 </div>
             </div>
         </div>
-
+    <div class="certificates-section" id="certificates">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Наши сертификаты</h2>
+            <p class="section-subtitle">Подтверждение профессиональной квалификации</p>
+        </div>
+        <div class="certificates-grid">
+            <!-- Узкие сертификаты (3 шт., 400-416px) -->
+            <div class="certificate-item narrow">
+                <img src="assets/cert1.jpg" alt="Сертификат FFS" loading="lazy">
+            </div>
+            <div class="certificate-item narrow">
+                <img src="assets/cert2.jpg" alt="Сертификат AnatomyStudy" loading="lazy">
+            </div>
+            <div class="certificate-item narrow">
+                <img src="assets/cert4.png" alt="Сертификат по пилатесу" loading="lazy">
+            </div>
+            
+            <!-- Широкие сертификаты (7 шт., 732-848px) -->
+            <div class="certificate-item wide">
+                <img src="assets/cert3.jpg" alt="Сертификат по йоге" loading="lazy">
+            </div>
+            <div class="certificate-item wide">
+                <img src="assets/cert5.png" alt="Сертификат по фитнесу" loading="lazy">
+            </div>
+            <div class="certificate-item wide">
+                <img src="assets/cert6.png" alt="Сертификат по кинезиологии" loading="lazy">
+            </div>
+            <div class="certificate-item wide">
+                <img src="assets/cert7.png" alt="Сертификат по массажу" loading="lazy">
+            </div>
+            <div class="certificate-item wide">
+                <img src="assets/cert8.png" alt="Сертификат по диетологии" loading="lazy">
+            </div>
+            <div class="certificate-item wide">
+                <img src="assets/cert9.png" alt="Сертификат по спортивной медицине" loading="lazy">
+            </div>
+            <div class="certificate-item wide">
+                <img src="assets/cert10.png" alt="Сертификат по реабилитации" loading="lazy">
+            </div>
+        </div>
+    </div>
+</div>
         <script src="script.js"></script>
     </body>
 </html>
