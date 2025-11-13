@@ -37,25 +37,6 @@ svg {
 }
 
 /* Accessibility utilities */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #983e3e;
-    color: white;
-    padding: 8px 16px;
-    text-decoration: none;
-    z-index: 10000;
-    border-radius: 0 0 4px 0;
-    font-weight: 600;
-}
-
-.skip-link:focus {
-    top: 0;
-    outline: 3px solid #ffd700;
-    outline-offset: 2px;
-}
-
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -276,19 +257,22 @@ button:focus-visible {
     body.menu-open {
         overflow: hidden;
     }
+    
+    body.menu-open .first-main::before,
+    body.menu-open .second-main,
+    body.menu-open .third-main,
+    body.menu-open .registration-section,
+    body.menu-open .tools-section,
+    body.menu-open .results-section {
+        filter: blur(8px);
+    }
 
     .navbar-overlay {
         position: fixed;
         inset: 0;
-        background: radial-gradient(
-                circle at 40% 30%,
-                rgba(255, 245, 242, 0.9),
-                rgba(255, 250, 248, 0.92) 40%,
-                rgba(250, 235, 232, 0.95) 70%
-            ),
-            linear-gradient(135deg, #fff5f2, #ffe9e5);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         display: flex;
         justify-content: center;
         align-items: flex-start;
