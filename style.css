@@ -114,7 +114,7 @@ button:focus-visible {
 }
 
 .navbar-brand img {
-    height: 80px; /* основной размер для десктопа */
+    height: 60px; /* уменьшенный размер для десктопа */
     width: auto;
     transition: transform 0.3s;
 }
@@ -125,13 +125,13 @@ button:focus-visible {
 
 @media (max-width: 1200px) {
     .navbar-brand img {
-        height: 65px; /* размер для планшетов */
+        height: 50px; /* уменьшенный размер для планшетов */
     }
 }
 
 @media (max-width: 768px) {
     .navbar-brand img {
-        height: 50px; /* размер для мобильных */
+        height: 40px; /* уменьшенный размер для мобильных */
     }
 }
 
@@ -1476,8 +1476,9 @@ button:focus-visible {
         pointer-events: auto;
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
         margin-top: 30px;
+        padding: 0 10px;
     }
 
     .hint-block {
@@ -1485,9 +1486,9 @@ button:focus-visible {
         margin: 0;
         display: block;
         background: white;
-        border-radius: 10px;
-        padding: 15px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        padding: 18px 16px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     }
 
     .action-hint,
@@ -1502,7 +1503,7 @@ button:focus-visible {
 
     .hint-trigger {
         justify-content: flex-start;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
         padding: 0;
         background: transparent;
         box-shadow: none;
@@ -1512,6 +1513,11 @@ button:focus-visible {
         transform: none;
         box-shadow: none;
         background: transparent;
+    }
+
+    .hint-title {
+        font-size: 16px;
+        font-weight: 600;
     }
 
     .hint-content {
@@ -1527,6 +1533,8 @@ button:focus-visible {
         visibility: visible;
         box-shadow: none;
         background: transparent;
+        font-size: 14px;
+        line-height: 1.5;
     }
 
     .hint-arrow {
@@ -1694,21 +1702,111 @@ button:focus-visible {
         padding: 60px 0;
     }
 
-    .registration-box {
+    .registration-inner-box {
         flex-direction: column;
-        padding: 40px 30px;
-        gap: 40px;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    .registration-content {
+        width: 100%;
+    }
+
+    .registration-title {
+        font-size: clamp(24px, 6vw, 36px);
+        text-align: center;
+    }
+
+    .registration-subtitle {
+        font-size: clamp(14px, 3vw, 16px);
+        text-align: center;
+    }
+
+    .registration-form {
+        gap: 20px;
+    }
+
+    .registration-input {
+        padding: 12px 0;
+        font-size: 15px;
+    }
+
+    .registration-checkbox {
+        gap: 10px;
+        margin: 15px 0;
+    }
+
+    .registration-checkbox label {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .registration-button-container {
+        text-align: center;
     }
 
     .registration-button-img {
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
+    }
+
+    .registration-image {
+        display: none;
     }
 }
 
 @media (max-width: 576px) {
+    .registration-section {
+        padding: 40px 0;
+    }
+
     .registration-box {
-        padding: 30px 20px;
+        padding: 8px;
+    }
+
+    .registration-inner-box {
+        padding: 25px 18px;
+        gap: 20px;
+    }
+
+    .registration-title {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .registration-subtitle {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .registration-form {
+        gap: 18px;
+    }
+
+    .registration-input {
+        padding: 10px 0;
+        font-size: 14px;
+    }
+
+    .registration-checkbox {
+        margin: 12px 0;
+    }
+
+    .registration-checkbox input[type='checkbox'] {
+        width: 18px;
+        height: 18px;
+    }
+
+    .registration-checkbox label {
+        font-size: 12px;
+    }
+
+    .registration-button-container {
+        margin-top: 15px;
+    }
+
+    .registration-button-img {
+        max-width: 250px;
     }
 }
 /* ------------------ Certificates Section ------------------ */
