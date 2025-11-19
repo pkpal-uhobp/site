@@ -114,7 +114,7 @@ button:focus-visible {
 }
 
 .navbar-brand img {
-    height: 80px; /* основной размер для десктопа */
+    height: 60px; /* уменьшенный размер для десктопа */
     width: auto;
     transition: transform 0.3s;
 }
@@ -125,13 +125,13 @@ button:focus-visible {
 
 @media (max-width: 1200px) {
     .navbar-brand img {
-        height: 65px; /* размер для планшетов */
+        height: 55px; /* размер для планшетов */
     }
 }
 
 @media (max-width: 768px) {
     .navbar-brand img {
-        height: 50px; /* размер для мобильных */
+        height: 45px; /* размер для мобильных */
     }
 }
 
@@ -257,8 +257,6 @@ button:focus-visible {
     display: block;
     position: relative;
     content: '';
-}
-.navbar-toggler-icon {
 }
 .navbar-toggler-icon::before {
     position: absolute;
@@ -1303,6 +1301,12 @@ button:focus-visible {
     margin: 50px 0;
 }
 
+@media (max-width: 1024px) {
+    .central-image-container {
+        min-height: 400px;
+    }
+}
+
 .central-image {
     position: relative;
     z-index: 2;
@@ -1315,39 +1319,34 @@ button:focus-visible {
 }
 
 .hint-blocks {
-    position: absolute;
     width: 100%;
-    height: 100%;
-    pointer-events: none;
+    max-width: 760px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    pointer-events: auto;
 }
 
 .hint-block {
-    position: absolute;
-    pointer-events: auto;
-    cursor: pointer;
+    position: relative;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px 24px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
 }
 
 .hint-trigger {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 8px 12px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.hint-trigger:hover {
-    background: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transform: scale(1.05);
+    margin-bottom: 10px;
 }
 
 .hint-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 17px;
     color: #2c3e50;
 }
 
@@ -1357,200 +1356,185 @@ button:focus-visible {
 }
 
 .hint-content {
-    position: absolute;
-    background: white;
-    padding: 15px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    line-height: 1.4;
+    font-size: 15px;
+    line-height: 1.6;
     color: #2c3e50;
-    max-width: 250px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    z-index: 10;
-}
-
-.hint-block:hover .hint-content {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
 }
 
 .hint-arrow {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid white;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.hint-block:hover .hint-arrow {
-    opacity: 1;
-}
-
-.action-hint {
-    top: -5%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.action-hint .hint-content {
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 10px;
-}
-
-.action-hint .hint-arrow {
-    top: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.psyche-hint {
-    top: 50%;
-    right: 10%;
-    transform: translateY(-50%);
-}
-
-.psyche-hint .hint-content {
-    top: 50%;
-    right: 100%;
-    transform: translateY(-50%);
-    margin-right: 10px;
-}
-
-.psyche-hint .hint-arrow {
-    top: 50%;
-    right: -8px;
-    transform: translateY(-50%);
-    border-left: 8px solid white;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-}
-
-.motivation-hint {
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-}
-
-.motivation-hint .hint-content {
-    top: 50%;
-    left: 100%;
-    transform: translateY(-50%);
-    margin-left: 10px;
-}
-
-.motivation-hint .hint-arrow {
-    top: 50%;
-    left: -8px;
-    transform: translateY(-50%);
-    border-right: 8px solid white;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
+    display: none;
 }
 
 @media (max-width: 768px) {
-    .central-image-container {
-        min-height: auto;
-        margin: 30px 0;
-        flex-direction: column;
-    }
-
-    .yoga-woman {
-        max-width: 250px;
-    }
-
     .hint-blocks {
-        position: static;
-        width: 100%;
-        height: auto;
-        pointer-events: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
+        gap: 16px;
+        padding: 0 10px;
         margin-top: 30px;
     }
 
     .hint-block {
-        position: static;
-        margin: 0;
-        display: block;
-        background: white;
-        border-radius: 10px;
-        padding: 15px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+        padding: 18px 20px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     }
 
-    .action-hint,
-    .psyche-hint,
-    .motivation-hint {
-        top: auto;
-        left: auto;
-        right: auto;
-        transform: none;
-        text-align: left;
-    }
-
-    .hint-trigger {
-        justify-content: flex-start;
-        margin-bottom: 10px;
-        padding: 0;
-        background: transparent;
-        box-shadow: none;
-    }
-
-    .hint-trigger:hover {
-        transform: none;
-        box-shadow: none;
-        background: transparent;
+    .hint-title {
+        font-size: 15px;
     }
 
     .hint-content {
-        position: static;
-        top: auto;
-        left: auto;
-        right: auto;
-        transform: none;
-        margin: 0;
-        padding: 0;
-        max-width: 100%;
-        opacity: 1;
-        visibility: visible;
-        box-shadow: none;
-        background: transparent;
-    }
-
-    .hint-arrow {
-        display: none;
+        font-size: 13.5px;
     }
 }
 
 @media (max-width: 576px) {
-    .central-image-container {
-        min-height: 300px;
-        margin: 20px 0;
+    .hint-blocks {
+        margin-top: 20px;
+        gap: 14px;
     }
 
-    .yoga-woman {
-        max-width: 200px;
-    }
-
-    .hint-title {
-        font-size: 14px;
+    .hint-block {
+        padding: 16px 18px;
     }
 
     .hint-content {
-        font-size: 12px;
-        padding: 10px 15px;
+        font-size: 12.5px;
+        line-height: 1.5;
+    }
+}
+
+@media (min-width: 1025px) {
+    .hint-blocks {
+        position: absolute;
+        inset: 0;
+        margin: 0;
+        max-width: none;
+        display: block;
+        gap: 0;
+        pointer-events: none;
+    }
+
+    .hint-block {
+        position: absolute;
+        background: transparent;
+        border-radius: 0;
+        padding: 0;
+        box-shadow: none;
+        pointer-events: auto;
+        cursor: pointer;
+    }
+
+    .hint-trigger {
+        padding: 8px 12px;
+        margin-bottom: 0;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 24px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hint-trigger:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 26px rgba(0, 0, 0, 0.16);
+    }
+
+    .hint-content {
+        position: absolute;
+        background: #ffffff;
+        padding: 15px 20px;
+        border-radius: 12px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        font-size: 14px;
+        line-height: 1.5;
+        max-width: 260px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 10;
+    }
+
+    .hint-block:hover .hint-content {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .hint-arrow {
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid white;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .hint-block:hover .hint-arrow {
+        opacity: 1;
+    }
+
+    .action-hint {
+        top: -6%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .action-hint .hint-content {
+        top: 110%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .action-hint .hint-arrow {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .psyche-hint {
+        top: 48%;
+        right: 5%;
+        transform: translateY(-50%);
+    }
+
+    .psyche-hint .hint-content {
+        top: 50%;
+        right: 110%;
+        transform: translateY(-50%);
+    }
+
+    .psyche-hint .hint-arrow {
+        top: 50%;
+        right: -8px;
+        transform: translateY(-50%);
+        border-left: 8px solid white;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+    }
+
+    .motivation-hint {
+        top: 48%;
+        left: 5%;
+        transform: translateY(-50%);
+    }
+
+    .motivation-hint .hint-content {
+        top: 50%;
+        left: 110%;
+        transform: translateY(-50%);
+    }
+
+    .motivation-hint .hint-arrow {
+        top: 50%;
+        left: -8px;
+        transform: translateY(-50%);
+        border-right: 8px solid white;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
     }
 }
 
@@ -1689,15 +1673,40 @@ button:focus-visible {
     margin-top: 150px;
 }
 
+@media (max-width: 1024px) {
+    .registration-inner-box {
+        flex-direction: column;
+        padding: 35px 25px;
+        gap: 40px;
+    }
+
+    .registration-image {
+        display: none;
+    }
+
+    .registration-content {
+        flex: 1;
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     .registration-section {
         padding: 60px 0;
     }
 
-    .registration-box {
+    .registration-inner-box {
         flex-direction: column;
-        padding: 40px 30px;
-        gap: 40px;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .registration-box {
+        padding: 8px;
+    }
+
+    .registration-image {
+        display: none;
     }
 
     .registration-button-img {
@@ -1707,8 +1716,53 @@ button:focus-visible {
 }
 
 @media (max-width: 576px) {
+    .registration-section {
+        padding: 40px 0;
+    }
+
+    .registration-inner-box {
+        padding: 25px 15px;
+        gap: 25px;
+    }
+
     .registration-box {
-        padding: 30px 20px;
+        padding: 6px;
+    }
+
+    .registration-title {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .registration-subtitle {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .registration-form {
+        gap: 20px;
+    }
+
+    .registration-input {
+        padding: 12px 0;
+        font-size: 14px;
+    }
+
+    .registration-checkbox {
+        gap: 10px;
+        margin: 15px 0;
+    }
+
+    .registration-checkbox label {
+        font-size: 12px;
+    }
+
+    .registration-button-container {
+        margin-top: 15px;
+    }
+
+    .registration-button-img {
+        max-width: 250px;
     }
 }
 /* ------------------ Certificates Section ------------------ */
