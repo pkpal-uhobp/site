@@ -1,4 +1,3 @@
-// Reworked mobile menu logic
 document.addEventListener('DOMContentLoaded', () => {
     const toggler = document.getElementById('navbarToggler');
     const overlay = document.getElementById('navbarOverlay');
@@ -13,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.add('menu-open');
         });
         toggler.setAttribute('aria-expanded', 'true');
-        // Фокус на первую ссылку для доступности
         links[0]?.focus();
     }
 
@@ -21,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.classList.remove('show');
         document.body.classList.remove('menu-open');
         toggler.setAttribute('aria-expanded', 'false');
-        // Ждем окончание transition чтобы скрыть
         setTimeout(() => {
             overlay.hidden = true;
         }, 350);
@@ -42,21 +39,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     closeBtn?.addEventListener('click', () => closeMenu());
 
-    // Закрытие по клику вне панели
     overlay?.addEventListener('click', (e) => {
         if (!panel.contains(e.target)) {
             closeMenu();
         }
     });
 
-    // Закрытие по Escape
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && overlay.classList.contains('show')) {
             closeMenu();
         }
     });
 
-    // Клик по ссылке = переход + закрытие
     links.forEach((link) => {
         link.addEventListener('click', () => {
             closeMenu();
@@ -64,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Подсветка активной ссылки по hash
     function setActiveLink(hash) {
         links.forEach((l) => l.classList.remove('nav-link--active'));
         if (!hash) return;
@@ -72,10 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
         target?.classList.add('nav-link--active');
     }
 
-    // При загрузке если уже есть hash (перезагрузка)
     setActiveLink(window.location.hash);
 
-    // При прокрутке / переходе (опционально можно усложнить: вычисление секции в viewport)
     window.addEventListener('hashchange', () => {
         setActiveLink(window.location.hash);
     });

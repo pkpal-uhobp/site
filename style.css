@@ -1,6 +1,6 @@
-/* ------------------ Base ------------------ */
 
-/* iOS Safe Area Support */
+
+
 :root {
     --safe-area-inset-top: env(safe-area-inset-top, 0px);
     --safe-area-inset-right: env(safe-area-inset-right, 0px);
@@ -26,7 +26,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Respect user's motion preferences */
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -45,7 +45,7 @@ svg {
     height: auto;
 }
 
-/* Accessibility utilities */
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -58,7 +58,7 @@ svg {
     border: 0;
 }
 
-/* Focus indicators */
+
 *:focus-visible {
     outline: 2px solid #983e3e;
     outline-offset: 3px;
@@ -83,13 +83,13 @@ button:focus-visible {
     margin: 0 auto;
 }
 
-/* Section header */
+
 .section-header {
     text-align: center;
     margin-bottom: 50px;
 }
 
-/* ------------------ Navbar (Desktop) ------------------ */
+
 .navbar {
     backdrop-filter: blur(10px);
     position: relative;
@@ -114,7 +114,7 @@ button:focus-visible {
 }
 
 .navbar-brand img {
-    height: 60px; /* уменьшенный размер для десктопа */
+    height: 60px; 
     width: auto;
     transition: transform 0.3s;
 }
@@ -125,13 +125,13 @@ button:focus-visible {
 
 @media (max-width: 1200px) {
     .navbar-brand img {
-        height: 55px; /* размер для планшетов */
+        height: 55px; 
     }
 }
 
 @media (max-width: 768px) {
     .navbar-brand img {
-        height: 45px; /* размер для мобильных */
+        height: 45px; 
     }
 }
 
@@ -222,7 +222,7 @@ button:focus-visible {
     outline-offset: 3px;
 }
 
-/* Form styling */
+
 .form-group {
     margin-bottom: 0;
 }
@@ -235,7 +235,7 @@ button:focus-visible {
     display: inline-block;
 }
 
-/* ------------------ Toggler ------------------ */
+
 .navbar-toggler {
     display: none;
     background: none;
@@ -269,7 +269,7 @@ button:focus-visible {
     left: 0;
 }
 
-/* ------------------ Mobile Menu (Reworked) ------------------ */
+
 @media (max-width: 1200px) {
     .desktop-only {
         display: none;
@@ -446,7 +446,7 @@ button:focus-visible {
         border-radius: 14px;
     }
 }
-/* ------------------ Hero (сокращён до ключевых) ------------------ */
+
 .hero-section {
     padding: 30px 0;
     position: relative;
@@ -495,7 +495,7 @@ button:focus-visible {
     margin-bottom: 30px;
 }
 
-/* Адаптив hero */
+
 @media (max-width: 768px) {
     .course-title {
         font-size: 60px;
@@ -517,7 +517,7 @@ button:focus-visible {
     }
 }
 
-/* Utility для скрытия (если понадобится) */
+
 .hidden {
     display: none;
 }
@@ -615,7 +615,7 @@ button:focus-visible {
     filter: brightness(0.9);
 }
 
-/* Медиа-запросы для главной секции */
+
 @media (max-width: 768px) {
     .features-grid {
         flex-direction: column;
@@ -656,7 +656,7 @@ button:focus-visible {
         height: 35px;
     }
 }
-/* Main Sections */
+
 .first-main {
     background-image: url(assets/background.svg);
     background-size: auto;
@@ -756,7 +756,7 @@ button:focus-visible {
     margin-right: auto;
 }
 
-/* Container query for elements grid */
+
 @container elements-section (max-width: 900px) {
     .elements-grid {
         grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
@@ -1082,7 +1082,7 @@ button:focus-visible {
     margin-top: 40px;
 }
 
-/* Container query for tools grid */
+
 @container tools-section (max-width: 800px) {
     .tools-grid {
         flex-direction: column;
@@ -1234,7 +1234,7 @@ button:focus-visible {
     margin-right: auto;
 }
 
-/* Container query for results */
+
 @container results-section (max-width: 700px) {
     .results-grid {
         grid-template-columns: 1fr;
@@ -1765,7 +1765,7 @@ button:focus-visible {
         max-width: 250px;
     }
 }
-/* ------------------ Certificates Section ------------------ */
+
 .certificates-section {
     padding: 100px 0;
     background-color: #fff;
@@ -1793,7 +1793,7 @@ button:focus-visible {
     color: #666;
 }
 
-/* Сложная сетка для десктопа */
+
 .certificates-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -1830,19 +1830,19 @@ button:focus-visible {
     transform: scale(1.05);
 }
 
-/* Узкие сертификаты - вертикальные */
+
 .certificate-item.narrow {
     grid-column: span 2;
     grid-row: span 3;
 }
 
-/* Широкие сертификаты - горизонтальные */
+
 .certificate-item.wide {
     grid-column: span 3;
     grid-row: span 2;
 }
 
-/* Глянцевый эффект на сертификатах */
+
 .certificate-item::before {
     content: '';
     position: absolute;
@@ -1864,13 +1864,13 @@ button:focus-visible {
     opacity: 1;
 }
 
-/* ------------------ Tablet View (768px - 1024px) ------------------ */
+
 @media (max-width: 1024px) {
     .certificates-section {
         padding: 80px 0;
     }
 
-    /* Упрощенная сетка для планшетов */
+    
     .certificates-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-auto-rows: auto;
@@ -1891,7 +1891,7 @@ button:focus-visible {
     }
 }
 
-/* ------------------ Mobile View (до 768px) ------------------ */
+
 @media (max-width: 768px) {
     .certificates-section {
         padding: 60px 0;
@@ -1922,7 +1922,7 @@ button:focus-visible {
     }
 }
 
-/* ------------------ Extra Small Devices (до 576px) ------------------ */
+
 @media (max-width: 576px) {
     .certificates-section {
         padding: 40px 0;
@@ -1952,3 +1952,4 @@ button:focus-visible {
         grid-row: span 1;
     }
 }
+
